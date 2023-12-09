@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function myFunction() {
+        document.getElementById("par").innerText = "Hello JavaScript";
+      }
+    </script>
+  </head>
+  <body>
+    <p id="par"></p>
+
+    <button type="button" id="button" onclick="dateFunction()">date</button>
+    <button type="button" id="buttonLoop" onclick="loopFunction()">loop</button>
+    <button type="button" id="buttonMap" onclick="mapFunction()">Map</button>
+    <script>
+      function dateFunction() {
+        var date = new Date().getDay();
+        console.log(date);
+        switch (date) {
+          case 0:
+            day = "Sunday";
+            break;
+          case 1:
+            day = "Monday";
+            break;
+          case 2:
+            day = "Tuesday";
+            break;
+          case 3:
+            day = "Wednesday";
+            break;
+          case 4:
+            day = "Thursday";
+            break;
+          case 5:
+            day = "Friday";
+            break;
+          case 6:
+            day = "Saturday";
+        }
+        document.getElementById("par").innerHTML = "today is " + day;
+        document.getElementById("button").style.display = "none";
+        document.getElementById("buttonLoop").style.display = "none";
+      }
+      function loopFunction() {
+        const person = { fname: "John", lname: "Doe", age: 25 };
+
+        let text1 = "";
+        for (let x in person) {
+          text1 += x + " " + person[x] + "<br>";
+          document.getElementById("par").innerHTML = text1;
+        }
+        document.getElementById("buttonLoop").style.display = "none";
+        document.getElementById("button").style.display = "none";
+        console.log(text1);
+        //     const cars = ["Saab", "Volvo", "BMW"];
+        //     var text = [];
+        //     for (let i = 0; i < cars.length; i++) {
+        //       text += "car is " + cars[i] + "<br>";
+        //       document.getElementById("par").innerHTML = text;
+        //     }
+        //     document.getElementById("buttonLoop").style.display = "none";
+        //     document.getElementById("button").style.display = "none";
+      }
+      function mapFunction() {
+        const fruits = new Map([
+          ["apples", 500],
+          ["bananas", 300],
+          ["oranges", 200],
+        ]);
+        fruits.set("abc",400);
+        fruits.set("apples",100);
+      let apple= fruits.get("apples"); 
+      fruits.delete("apples");
+        console.log(String(Date()));
+      }
+    </script>
+  </body>
+</html>
